@@ -9,6 +9,12 @@ const config = {
 
 const pool = require('node-jt400').pool(config);
 
+app.get('/', async function (req,res) {
+  var st = await ("Select TH_NAME From MBRFLIB/PM100MP WHERE PNID=1")
+  let q1 =  await pool.query(st)
+  await res.send('Hello World2 ' + q1)
+} )
+
 app.get('/:PNID', async function (req,res) {
   var st = await ("Select TH_NAME From MBRFLIB/PM100MP WHERE PNID="+req.params.PNID)
   let q1 =  await pool.query(st)
