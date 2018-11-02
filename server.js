@@ -22,6 +22,6 @@ app.get('/:PNID', async function (req,res) {
 } )
   
 
-app.listen(3000, () => {
-  console.log('Start server at port 3000.')
+app.listen(8020, () => {
+  console.log('Start server at port 8020.')
 })
